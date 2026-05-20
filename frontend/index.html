@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업무 말투 변환기</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💼 업무 말투 변환기</h1>
+            <p>전달하고 싶은 내용을 상대방에 맞는 업무 언어로 바꿔보세요.</p>
+        </header>
+
+        <main>
+            <section class="selection-section">
+                <h3>받는 사람</h3>
+                <div class="target-group" id="targetGroup">
+                    <button class="target-btn active" data-target="boss">👔 상사 / 임원</button>
+                    <button class="target-btn" data-target="colleague">🤝 타팀 동료</button>
+                    <button class="target-btn" data-target="client">🌐 고객 / 외부</button>
+                    <button class="target-btn" data-target="team">👥 팀 내 동료</button>
+                </div>
+            </section>
+
+            <section class="input-section">
+                <textarea id="inputText" placeholder="하고 싶은 말을 편하게 입력하세요... (예: 내일까지 보고서 제출 어려울 것 같음)"></textarea>
+                <button id="convertBtn" onclick="convertTone()">변환하기</button>
+            </section>
+
+            <section class="output-section" id="outputSection" style="display: none;">
+                <div class="result-header">
+                    <h3>변환 결과</h3>
+                    <button id="copyBtn" onclick="copyResult()">복사하기 📋</button>
+                </div>
+                <textarea id="outputText" readonly></textarea>
+            </section>
+
+            <div id="loading" class="loading-spinner" style="display: none;">
+                변환 중입니다... 🔄
+            </div>
+        </main>
+    </div>
+    <script src="static/js/app.js"></script>
+</body>
+</html>
